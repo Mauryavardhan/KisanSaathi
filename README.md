@@ -2,7 +2,9 @@
 
 <div align="center">
 
-**A modern web platform for agricultural guidance and farmer support**
+**Smart India Hackathon 2025 - Agricultural Advisory Platform**
+
+![Smart India Hackathon 2025](https://img.shields.io/badge/Smart_India_Hackathon-2025-FF6B35?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDJMMTUuMDkgOC4yNkwyMiA5TDE3IDEzLjc0TDE4IDIxTDEyIDE4TDYgMjFMNyAxMy43NEwyIDlMOC45MSA4LjI2TDEyIDJaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K)
 
 [![Next.js](https://img.shields.io/badge/Next.js-15.0.3-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.6.3-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
@@ -13,9 +15,23 @@
 
 ## 📋 Project Description
 
-Kisan Saathi is a comprehensive web-based agricultural advisory platform developed as part of our academic project. The frontend provides farmers with access to agricultural guidance, crop recommendations, disease identification tools, weather information, and market insights through an intuitive web interface.
+Kisan Saathi is a comprehensive web-based agricultural advisory platform developed for **Smart India Hackathon 2025**. This frontend application provides farmers across India with access to agricultural guidance, crop recommendations, disease identification tools, weather information, and market insights through an intuitive web interface.
 
-This project demonstrates modern web development practices using React, Next.js, and TypeScript to create a user-friendly platform for the agricultural community.
+This project addresses the critical need for accessible agricultural information in rural India, leveraging modern web technologies to bridge the gap between farmers and agricultural expertise. Built with React, Next.js, and TypeScript, it demonstrates our team's capability to create scalable solutions for real-world agricultural challenges.
+
+## 🎯 Problem Statement (SIH 2025)
+
+**Challenge**: Many farmers in India lack easy access to timely, accurate agricultural information, leading to suboptimal farming decisions, crop losses, and reduced productivity.
+
+**Our Solution**: A comprehensive web-based platform that provides:
+- Instant access to agricultural guidance
+- Crop recommendation systems based on local conditions
+- Disease identification and treatment advice
+- Weather-based farming advisories
+- Market price information for better selling decisions
+- Government scheme awareness and access
+
+**Impact**: Empowering farmers with technology-driven solutions to increase crop yields, reduce losses, and improve overall agricultural productivity across India.
 
 ## 🎯 Features Implemented
 
@@ -217,7 +233,15 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👥 Team
 
-Developed as part of our academic project to create a comprehensive agricultural advisory platform for Indian farmers.
+Developed for **Smart India Hackathon 2025** to address agricultural challenges in India and provide farmers with accessible, technology-driven solutions for better crop management and agricultural decision-making.
+
+### 🏆 Smart India Hackathon 2025
+- **Event**: Smart India Hackathon 2025
+- **Problem Statement**: Digital Agricultural Advisory System for Indian Farmers
+- **Focus Area**: Agriculture & FarmTech Solutions
+- **Target Users**: Farmers across India, especially in rural and remote areas
+- **Impact Goal**: Bridge the agricultural knowledge gap through accessible technology
+- **Solution Approach**: User-friendly web platform with comprehensive farming tools
 
 ## 📞 Contact
 
@@ -229,8 +253,9 @@ For questions about this project:
 
 <div align="center">
 
+**Smart India Hackathon 2025** 🏆  
 **Built for farmers across India** 🇮🇳
 
-[GitHub Repository](https://github.com/Mauryavardhan/KisanSaathi) • [Documentation](docs/) • [Issues](https://github.com/Mauryavardhan/KisanSaathi/issues)
+[GitHub Repository](https://github.com/Mauryavardhan/KisanSaathi) • [Issues](https://github.com/Mauryavardhan/KisanSaathi/issues)
 
 </div>
