@@ -1,0 +1,152 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  emailVerified DateTime?
+  image         String?
+  password      String?   // For credential-based authentication
+  phone         String?
+  location      String?
+  language      String    @default("en")
+  farmerType    String?   // smallholder, commercial, etc.
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  // Authentication
+  accounts Account[]
+  sessions Session[]
+  
+  // App specific
+  chatSessions ChatSession[]
+  queries      Query[]
+  feedback     Feedback[]
+
+  @@map("users")
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@map("accounts")
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+  @@map("verificationtokens")
+}
+
+model ChatSession {
+  id        String   @id @default(cuid())
+  userId    String
+  title     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user     User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  messages Message[]
+
+  @@map("chat_sessions")
+}
+
+model Message {
+  id            String   @id @default(cuid())
+  chatSessionId String
+  role          String   // user, assistant, system
+  content       String
+  metadata      String?    // JSON string for additional data like agent type, confidence, etc.
+  createdAt     DateTime @default(now())
+
+  chatSession ChatSession @relation(fields: [chatSessionId], references: [id], onDelete: Cascade)
+
+  @@map("messages")
+}
+
+model Query {
+  id            String   @id @default(cuid())
+  userId        String
+  query         String
+  response      String?
+  agentType     String?  // crop_recommendation, disease_detection, etc.
+  language      String   @default("en")
+  inputType     String   @default("text") // text, voice, image
+  confidence    Float?
+  processingTime Int?    // in milliseconds
+  satisfied     Boolean?
+  createdAt     DateTime @default(now())
+
+  user     User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  feedback Feedback[]
+
+  @@map("queries")
+}
+
+model Feedback {
+  id        String   @id @default(cuid())
+  userId    String
+  queryId   String?
+  rating    Int      // 1-5 stars
+  comment   String?
+  category  String?  // helpful, accurate, fast, etc.
+  createdAt DateTime @default(now())
+
+  user  User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  query Query? @relation(fields: [queryId], references: [id], onDelete: SetNull)
+
+  @@map("feedback")
+}
+
+model AgentConfig {
+  id          String   @id @default(cuid())
+  name        String   @unique
+  displayName String
+  description String
+  endpoint    String
+  enabled     Boolean  @default(true)
+  icon        String?
+  category    String   // advice, detection, recommendation, etc.
+  parameters  String?    // JSON string for configuration parameters
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("agent_configs")
+}
