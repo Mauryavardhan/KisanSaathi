@@ -33,7 +33,7 @@ const navigationItems = [
     description: "Overview and quick actions"
   },
   {
-    title: "AI Chat",
+    title: "Chat",
     href: "/dashboard/chat",
     icon: MessageSquare,
     description: "Ask farming questions"

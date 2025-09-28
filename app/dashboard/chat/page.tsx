@@ -50,7 +50,7 @@ export default function ChatPage() {
     {
       id: '1',
       role: 'assistant',
-      content: 'Hello! I\'m your AI farming assistant. I can help you with crop recommendations, disease detection, weather updates, market prices, and much more. What farming question do you have today?',
+      content: 'Hello! I\'m your farming assistant. I can help you with crop recommendations, disease detection, weather updates, market prices, and much more. What farming question do you have today?',
       timestamp: new Date(),
       metadata: {
         agent_used: 'greeting',
@@ -185,7 +185,7 @@ export default function ChatPage() {
   return (
     <div className="h-full flex flex-col p-6">
       <div className="mb-6">
-        <h1 className="text-2xl font-bold">AI Chat Assistant</h1>
+        <h1 className="text-2xl font-bold">Chat Assistant</h1>
         <p className="text-muted-foreground">
           Ask me anything about farming, crops, diseases, weather, and more!
         </p>

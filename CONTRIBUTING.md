@@ -1,117 +1,62 @@
 # Contributing to Kisan Saathi
 
-Thank you for your interest in contributing to Kisan Saathi! We welcome contributions from the community to help improve this AI-powered agricultural advisory platform.
+Thank you for your interest in contributing to Kisan Saathi! This project was developed as an academic exercise to create a comprehensive agricultural advisory platform.
 
 ## 🤝 How to Contribute
 
 ### Reporting Issues
 
 1. **Search existing issues** first to avoid duplicates
-2. **Use the issue template** when creating new issues
-3. **Provide detailed information** including:
-   - Steps to reproduce the issue
+2. **Create detailed issue reports** including:
+   - Steps to reproduce the problem
    - Expected vs actual behavior
-   - Screenshots or error messages
+   - Screenshots if applicable
    - Environment details (OS, browser, Node.js version)
 
 ### Suggesting Features
 
-1. **Check the roadmap** to see if the feature is already planned
-2. **Open a feature request** with detailed description
-3. **Explain the use case** and why it would benefit farmers
-4. **Consider implementation complexity** and provide suggestions
+1. **Open a feature request** with detailed description
+2. **Explain the agricultural use case** and benefits for farmers
+3. **Consider implementation feasibility** and provide suggestions
 
 ### Code Contributions
 
 1. **Fork the repository**
 2. **Create a feature branch** from `main`
 3. **Make your changes** following our coding standards
-4. **Write tests** for new functionality
-5. **Update documentation** if needed
-6. **Submit a pull request**
+4. **Test your changes** thoroughly
+5. **Submit a pull request** with clear description
 
 ## 🚀 Development Setup
 
 ### Prerequisites
 
 - Node.js 18.0.0 or higher
-- PostgreSQL 14.0 or higher
-- Git
+- Git for version control
 
 ### Quick Start
 
 ```bash
 # Clone your fork
-git clone https://github.com/yourusername/kisan-saathi-frontend.git
-cd kisan-saathi-frontend
+git clone https://github.com/yourusername/KisanSaathi.git
+cd KisanSaathi
 
-# Run setup script
-./scripts/dev-setup.sh
+# Install dependencies
+npm install
+
+# Setup environment
+cp .env.example .env
+# Edit .env with your configuration
+
+# Initialize database
+npx prisma migrate dev --name init
+npx prisma db seed
 
 # Start development server
 npm run dev
 ```
 
-### Development Workflow
-
-1. **Sync with upstream**
-   ```bash
-   git fetch upstream
-   git checkout main
-   git merge upstream/main
-   ```
-
-2. **Create feature branch**
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
-
-3. **Make changes and commit**
-   ```bash
-   git add .
-   git commit -m "feat: add your feature description"
-   ```
-
-4. **Push and create PR**
-   ```bash
-   git push origin feature/your-feature-name
-   ```
-
 ## 📝 Coding Standards
-
-### TypeScript
-
-- Use TypeScript for all new code
-- Define proper interfaces and types
-- Avoid `any` type unless absolutely necessary
-- Use strict mode settings
-
-### React Components
-
-```typescript
-// ✅ Good
-interface ButtonProps {
-  variant?: 'primary' | 'secondary'
-  children: React.ReactNode
-  onClick?: () => void
-}
-
-export function Button({ variant = 'primary', children, onClick }: ButtonProps) {
-  return (
-    <button 
-      className={cn('btn', variant === 'primary' && 'btn-primary')}
-      onClick={onClick}
-    >
-      {children}
-    </button>
-  )
-}
-
-// ❌ Avoid
-export function Button(props: any) {
-  return <button {...props} />
-}
-```
 
 ### File Organization
 
@@ -138,87 +83,25 @@ app/
 
 ### Git Commit Messages
 
-Follow [Conventional Commits](https://www.conventionalcommits.org/):
+Use clear, descriptive commit messages:
 
 ```
 feat: add crop recommendation feature
 fix: resolve authentication issue
-docs: update API documentation
+docs: update setup instructions
 style: improve dashboard layout
 refactor: optimize database queries
-test: add unit tests for auth service
+test: add component tests
 ```
 
 ### CSS/Styling
 
 - Use TailwindCSS utility classes
-- Create component variants with `cva`
 - Follow mobile-first responsive design
-- Use CSS custom properties for theming
-
-```typescript
-// ✅ Good
-const buttonVariants = cva(
-  "inline-flex items-center justify-center rounded-md",
-  {
-    variants: {
-      variant: {
-        default: "bg-primary text-primary-foreground",
-        secondary: "bg-secondary text-secondary-foreground",
-      },
-      size: {
-        default: "h-10 px-4",
-        sm: "h-9 px-3",
-      },
-    },
-  }
-)
-```
+- Maintain consistent spacing and colors
+- Use semantic HTML elements
 
 ## 🧪 Testing
-
-### Unit Tests
-
-```typescript
-import { render, screen } from '@testing-library/react'
-import { Button } from '../button'
-
-describe('Button', () => {
-  it('renders correctly', () => {
-    render(<Button>Click me</Button>)
-    expect(screen.getByRole('button')).toHaveTextContent('Click me')
-  })
-
-  it('handles click events', () => {
-    const handleClick = jest.fn()
-    render(<Button onClick={handleClick}>Click me</Button>)
-    screen.getByRole('button').click()
-    expect(handleClick).toHaveBeenCalledTimes(1)
-  })
-})
-```
-
-### Integration Tests
-
-```typescript
-import { render, screen, waitFor } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
-import { CropRecommendation } from '../crop-recommendation'
-
-describe('CropRecommendation', () => {
-  it('submits form and displays results', async () => {
-    render(<CropRecommendation />)
-    
-    await userEvent.type(screen.getByLabelText(/location/i), 'Delhi')
-    await userEvent.selectOptions(screen.getByLabelText(/soil type/i), 'loamy')
-    await userEvent.click(screen.getByRole('button', { name: /get recommendations/i }))
-    
-    await waitFor(() => {
-      expect(screen.getByText(/recommended crops/i)).toBeInTheDocument()
-    })
-  })
-})
-```
 
 ### Running Tests
 
@@ -229,160 +112,67 @@ npm test
 # Run tests in watch mode
 npm run test:watch
 
-# Run specific test file
-npm test button.test.tsx
+# Check TypeScript
+npm run type-check
 
-# Generate coverage report
-npm run test:coverage
+# Run linting
+npm run lint
 ```
 
-## 🌍 Internationalization
+### Writing Tests
 
-### Adding New Languages
-
-1. **Create language file**
-   ```typescript
-   // locales/hi.json
-   {
-     "common": {
-       "loading": "लोड हो रहा है...",
-       "error": "त्रुटि",
-       "success": "सफलता"
-     },
-     "dashboard": {
-       "welcome": "स्वागत है",
-       "askQuestion": "प्रश्न पूछें"
-     }
-   }
-   ```
-
-2. **Update language configuration**
-   ```typescript
-   // lib/i18n.ts
-   export const supportedLanguages = [
-     { code: 'en', name: 'English' },
-     { code: 'hi', name: 'हिंदी' },
-     // Add new language here
-   ]
-   ```
-
-### Using Translations
-
-```typescript
-import { useTranslation } from 'next-i18next'
-
-export function Dashboard() {
-  const { t } = useTranslation('dashboard')
-  
-  return (
-    <div>
-      <h1>{t('welcome')}</h1>
-      <button>{t('askQuestion')}</button>
-    </div>
-  )
-}
-```
-
-## 🔒 Security Guidelines
-
-### API Security
-
-- Validate all inputs on both client and server
-- Use parameterized queries to prevent SQL injection
-- Implement rate limiting for API endpoints
-- Never expose sensitive data in client-side code
-
-### Authentication
-
-- Use secure session management
-- Implement proper CSRF protection
-- Validate user permissions for all actions
-- Use HTTPS in production
-
-### Data Privacy
-
-- Follow GDPR and local privacy regulations
-- Minimize data collection to what's necessary
-- Implement proper data encryption
-- Provide clear privacy policies
+- Write unit tests for utility functions
+- Test React components with user interactions
+- Ensure proper error handling
+- Test responsive design on different screen sizes
 
 ## 📚 Documentation
 
 ### Code Documentation
 
-```typescript
-/**
- * Processes crop recommendation request
- * @param request - The crop recommendation parameters
- * @param userContext - User's farming context
- * @returns Promise<CropRecommendation[]> Array of recommended crops
- * @throws {ValidationError} When required parameters are missing
- * @example
- * ```typescript
- * const recommendations = await getCropRecommendations({
- *   soilType: 'loamy',
- *   location: 'Punjab'
- * })
- * ```
- */
-export async function getCropRecommendations(
-  request: CropRecommendationRequest,
-  userContext?: UserContext
-): Promise<CropRecommendation[]> {
-  // Implementation
-}
-```
+- Use JSDoc comments for complex functions
+- Document component props and interfaces
+- Explain agricultural domain logic
+- Keep README updated with new features
 
-### API Documentation
+### Commit Guidelines
 
-- Document all endpoints with OpenAPI/Swagger
-- Provide request/response examples
-- Include error codes and messages
-- Keep documentation updated with code changes
+- Keep commits focused on single changes
+- Write clear commit messages
+- Reference issue numbers when applicable
+- Update documentation for user-facing changes
 
-## 🚀 Release Process
+## 🌱 Agricultural Domain
 
-### Version Numbering
+When working on agricultural features:
 
-We follow [Semantic Versioning](https://semver.org/):
-- **MAJOR** version for incompatible API changes
-- **MINOR** version for new functionality 
-- **PATCH** version for bug fixes
-
-### Release Checklist
-
-- [ ] All tests pass
-- [ ] Documentation updated
-- [ ] CHANGELOG.md updated
-- [ ] Version number bumped
-- [ ] Database migrations tested
-- [ ] Performance benchmarks meet standards
-- [ ] Security review completed
+- Research proper farming terminology
+- Understand seasonal crop cycles
+- Consider regional farming practices
+- Validate agricultural data accuracy
 
 ## 📞 Getting Help
 
 ### Community Support
 
-- **Discord**: [Join our community](https://discord.gg/kisansaathi)
-- **GitHub Discussions**: [Ask questions](https://github.com/yourusername/kisan-saathi-frontend/discussions)
-- **Email**: dev@kisansaathi.com
+- **GitHub Issues**: [Report bugs or ask questions](https://github.com/Mauryavardhan/KisanSaathi/issues)
+- **Discussions**: [General discussions and ideas](https://github.com/Mauryavardhan/KisanSaathi/discussions)
 
-### Mentorship
+### Development Help
 
-New contributors can request mentorship for:
-- First-time contributions
-- Complex feature development
-- Code review and best practices
-- Career guidance in agricultural technology
+For questions about:
+- Setting up the development environment
+- Understanding the codebase structure
+- Implementing new features
+- Testing and debugging
+
+Create an issue with the "help wanted" label.
 
 ## 📜 Code of Conduct
 
-We are committed to providing a welcoming and inspiring community for all. Please read our [Code of Conduct](CODE_OF_CONDUCT.md) before participating.
-
-### Our Standards
+We are committed to providing a welcoming and inclusive environment for all contributors:
 
 - **Be respectful** to all community members
-- **Be inclusive** and welcoming to newcomers
 - **Be constructive** in feedback and discussions
 - **Be patient** with questions and learning processes
 - **Be collaborative** in problem-solving
@@ -392,16 +182,6 @@ We are committed to providing a welcoming and inspiring community for all. Pleas
 Contributors will be recognized in:
 - README.md contributors section
 - Release notes for significant contributions
-- Annual contributor spotlight
-- Conference speaking opportunities
+- Project documentation updates
 
-## 📊 Metrics and Goals
-
-We track these metrics to measure our impact:
-- **Code Quality**: Test coverage, linting scores
-- **Performance**: Page load times, API response times
-- **Accessibility**: WCAG compliance scores
-- **User Experience**: Task completion rates, user satisfaction
-- **Agricultural Impact**: Number of farmers helped, success stories
-
-Thank you for contributing to Kisan Saathi and helping farmers across India! 🌾
+Thank you for contributing to Kisan Saathi and helping create better tools for farmers! 🌾

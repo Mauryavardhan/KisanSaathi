@@ -7,18 +7,17 @@ import { Toaster } from "react-hot-toast"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Kisan Saathi - AI-Powered Farmer Advisory System",
-  description: "An intelligent agricultural advisory platform providing personalized farming guidance, crop recommendations, disease detection, and market insights for farmers.",
+  title: "Kisan Saathi - Farmer Advisory System",
+  description: "A comprehensive agricultural advisory platform providing farming guidance, crop recommendations, and agricultural insights for farmers.",
   keywords: [
     "agriculture",
     "farming",
-    "AI",
     "crop recommendation",
     "disease detection",
     "farmer advisory",
     "agricultural technology",
-    "precision farming",
-    "smart agriculture"
+    "farming platform",
+    "agricultural guidance"
   ],
   authors: [{ name: "Kisan Saathi Team" }],
   creator: "Kisan Saathi",
@@ -27,22 +26,22 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://kisan-saathi.vercel.app",
-    title: "Kisan Saathi - AI-Powered Farmer Advisory System",
-    description: "Empowering farmers with AI-driven agricultural insights and recommendations",
+    url: "http://localhost:3000",
+    title: "Kisan Saathi - Farmer Advisory System",
+    description: "Supporting farmers with agricultural guidance and recommendations",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Kisan Saathi - AI-Powered Farmer Advisory System",
+        alt: "Kisan Saathi - Farmer Advisory System",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kisan Saathi - AI-Powered Farmer Advisory System",
-    description: "Empowering farmers with AI-driven agricultural insights and recommendations",
+    title: "Kisan Saathi - Farmer Advisory System",
+    description: "Supporting farmers with agricultural guidance and recommendations",
     images: ["/og-image.jpg"],
   },
   icons: {

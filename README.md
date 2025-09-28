@@ -1,10 +1,8 @@
-# 🌾 Kisan Saathi - AI-Powered Farmer Advisory System
+# 🌾 Kisan Saathi - Farmer Advisory System
 
 <div align="center">
 
-![Kisan Saathi Logo](public/kisan-saathi-logo.png)
-
-**Empowering farmers with intelligent agricultural insights and recommendations**
+**A modern web platform for agricultural guidance and farmer support**
 
 [![Next.js](https://img.shields.io/badge/Next.js-15.0.3-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.6.3-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
@@ -13,380 +11,226 @@
 
 </div>
 
-## 🚀 Overview
+## 📋 Project Description
 
-Kisan Saathi is a comprehensive AI-powered agricultural advisory platform designed to revolutionize farming practices in India. Built with cutting-edge technology, it provides farmers with personalized advice, crop recommendations, disease detection, weather insights, and market intelligence—all accessible through an intuitive web interface supporting multiple languages and input methods.
+Kisan Saathi is a comprehensive web-based agricultural advisory platform developed as part of our academic project. The frontend provides farmers with access to agricultural guidance, crop recommendations, disease identification tools, weather information, and market insights through an intuitive web interface.
 
-### 🎯 Key Features
+This project demonstrates modern web development practices using React, Next.js, and TypeScript to create a user-friendly platform for the agricultural community.
 
-- **🤖 AI Chat Assistant**: Interactive farming advice in multiple Indian languages
-- **🌱 Crop Recommendations**: Personalized suggestions based on soil, climate, and market conditions
-- **🛡️ Disease Detection**: Upload crop images for instant disease identification and treatment advice
-- **☁️ Weather Advisory**: Real-time weather forecasts with agricultural insights
-- **📈 Market Intelligence**: Live commodity prices and market trends
-- **💧 Irrigation Planning**: Smart water management recommendations
-- **🐛 Pest Management**: Integrated pest control strategies
-- **🧪 Fertilizer Guidance**: Soil-specific nutrition recommendations
-- **🏛️ Government Schemes**: Information about agricultural subsidies and policies
-- **📱 Multi-modal Input**: Text, voice, and image-based queries
+## 🎯 Features Implemented
 
-## 🏗️ Architecture
+### Core Functionality
+- **💬 Interactive Chat Interface**: Conversational platform for agricultural queries
+- **🌱 Crop Recommendation System**: Input-based crop suggestions for different soil types
+- **🛡️ Disease Detection Interface**: Image upload functionality for crop health analysis  
+- **☁️ Weather Information Display**: Weather data integration for agricultural planning
+- **📈 Market Price Tracking**: Interface for displaying commodity prices and trends
+- **💧 Irrigation Planning Tools**: Water management guidance system
+- **🐛 Pest Management Interface**: Pest control information and strategies
+- **🧪 Fertilizer Calculator**: Nutrition recommendations based on soil data
+- **🏛️ Government Schemes**: Information portal for agricultural policies
 
-Kisan Saathi follows a modern, scalable architecture:
+### Technical Features
+- **🔐 User Authentication**: Secure login and registration system
+- **📱 Responsive Design**: Mobile-first approach for accessibility
+- **🌐 Multi-language Support**: Framework for regional language integration
+- **💾 Data Management**: Local database with user preferences and chat history
+- **🎨 Modern UI/UX**: Clean, agricultural-themed interface design
 
-```
-Frontend (Next.js 15) ↔ Backend API (Python/FastAPI) ↔ AI Models & Services
-         ↓                        ↓                          ↓
-    Prisma ORM              Database Layer              Vector Database
-         ↓                        ↓                          ↓
-   PostgreSQL              External APIs               Knowledge Base
-```
+## 🛠️ Technology Stack
 
-### 🛠️ Tech Stack
+**Frontend Framework:**
+- **Next.js 15** - React framework with App Router
+- **TypeScript** - Type-safe development
+- **TailwindCSS** - Utility-first CSS framework
+- **shadcn/ui** - Modern UI component library
 
-**Frontend:**
-- **Framework**: Next.js 15 (App Router)
-- **Language**: TypeScript 5.6.3
-- **Styling**: TailwindCSS + shadcn/ui
-- **Authentication**: NextAuth.js
-- **Database ORM**: Prisma
-- **State Management**: Zustand + React Query
-- **Animations**: Framer Motion
+**Database & Authentication:**
+- **Prisma ORM** - Database management
+- **SQLite/PostgreSQL** - Data storage options
+- **NextAuth.js** - Authentication system
+- **bcryptjs** - Password encryption
 
-**Backend Integration:**
-- **API Client**: Axios with interceptors
-- **Real-time**: Server-Sent Events
-- **File Upload**: Multipart form data
-- **Caching**: React Query + SWR patterns
+**Development Tools:**
+- **ESLint & Prettier** - Code quality and formatting
+- **React Query** - Server state management
+- **Framer Motion** - Animation library
+- **React Hook Form** - Form handling
 
-**Database:**
-- **Primary**: PostgreSQL (via Prisma)
-- **Session Storage**: Database sessions
-- **File Storage**: Local/Cloud storage integration
-
-## 📦 Installation & Setup
+## 🚀 Getting Started
 
 ### Prerequisites
+- Node.js 18.0.0 or higher
+- npm, yarn, or pnpm package manager
 
-- **Node.js**: 18.0.0 or higher
-- **npm/yarn/pnpm**: Latest stable version
-- **PostgreSQL**: 14.0 or higher
-- **Git**: For version control
-
-### 🔧 Quick Start
+### Installation
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/kisan-saathi-frontend.git
-   cd kisan-saathi-frontend
+   git clone https://github.com/Mauryavardhan/KisanSaathi.git
+   cd KisanSaathi
    ```
 
 2. **Install dependencies**
    ```bash
    npm install
-   # or
-   yarn install
-   # or
-   pnpm install
    ```
 
-3. **Environment Setup**
+3. **Set up environment variables**
    ```bash
    cp .env.example .env
    ```
    
-   Fill in your environment variables:
+   Configure your `.env` file:
    ```env
-   # Database
-   DATABASE_URL="postgresql://username:password@localhost:5432/kisan_saathi"
-   
-   # NextAuth.js
-   NEXTAUTH_SECRET="your-nextauth-secret-key-here"
+   DATABASE_URL="file:./dev.db"
+   NEXTAUTH_SECRET="your-secret-key-here"
    NEXTAUTH_URL="http://localhost:3000"
-   
-   # Backend API
    NEXT_PUBLIC_API_URL="http://localhost:8000"
-   NEXT_PUBLIC_BACKEND_URL="http://localhost:8000"
-   
-   # Optional: External APIs
-   GOOGLE_CLIENT_ID="your-google-client-id"
-   GOOGLE_CLIENT_SECRET="your-google-client-secret"
    ```
 
-4. **Database Setup**
+4. **Initialize the database**
    ```bash
-   # Generate Prisma client
-   npx prisma generate
-   
-   # Run database migrations
    npx prisma migrate dev --name init
-   
-   # Seed database (optional)
    npx prisma db seed
    ```
 
-5. **Start Development Server**
+5. **Start the development server**
    ```bash
    npm run dev
    ```
 
-   Open [http://localhost:3000](http://localhost:3000) in your browser.
+6. **Open your browser**
+   
+   Navigate to [http://localhost:3000](http://localhost:3000) to view the application.
 
-## 🚀 Deployment
-
-### 🐳 Docker Deployment
-
-1. **Build Docker Image**
-   ```bash
-   docker build -t kisan-saathi-frontend .
-   ```
-
-2. **Run Container**
-   ```bash
-   docker run -p 3000:3000 --env-file .env kisan-saathi-frontend
-   ```
-
-### ☁️ Vercel Deployment
-
-1. **Install Vercel CLI**
-   ```bash
-   npm i -g vercel
-   ```
-
-2. **Deploy**
-   ```bash
-   vercel --prod
-   ```
-
-### 🔧 Production Environment
-
-**Environment Variables for Production:**
-```env
-NODE_ENV=production
-DATABASE_URL="your-production-database-url"
-NEXTAUTH_SECRET="your-production-secret"
-NEXTAUTH_URL="https://your-domain.com"
-NEXT_PUBLIC_API_URL="https://your-backend-api.com"
-```
-
-## 📚 API Integration
-
-### Backend Connection
-
-The frontend connects to your existing backend at: https://github.com/shubham21-ai/Farmer-Query-Support-and-Advisory-System
-
-**Key API Endpoints:**
-
-```typescript
-// Query endpoint
-POST /query
-{
-  "query": "string",
-  "language": "en|hi|bn|...",
-  "input_type": "text|voice|image",
-  "user_context": {...}
-}
-
-// Crop recommendations
-POST /crop-recommendation
-{
-  "soil_type": "string",
-  "location": "string",
-  "ph_level": number,
-  // ... other parameters
-}
-
-// Disease detection
-POST /disease-detection
-{
-  "image_data": "base64-encoded-image",
-  "crop_type": "string"
-}
-
-// Weather data
-GET /weather?location=string&days=number
-
-// Market prices
-GET /market-prices?crop_name=string&location=string
-```
-
-### Authentication Flow
-
-1. User signs up/logs in via NextAuth.js
-2. JWT token stored in secure HTTP-only cookies
-3. API requests include Authorization header
-4. Backend validates token and returns data
-
-## 🎨 UI Components
-
-### Design System
-
-- **Colors**: Agricultural green primary (#22c55e) with earth tones
-- **Typography**: Inter font family for modern readability
-- **Components**: Built with Radix UI primitives and styled with TailwindCSS
-- **Icons**: Lucide React for consistent iconography
-- **Responsive**: Mobile-first design approach
-
-### Component Structure
+## 📁 Project Structure
 
 ```
-components/
-├── ui/           # Base UI components (Button, Input, Card, etc.)
-├── layout/       # Layout components (Sidebar, Header, etc.)
-├── features/     # Feature-specific components
-├── forms/        # Form components and validation
-└── providers/    # Context providers and wrappers
-```
-
-## 🧪 Testing
-
-```bash
-# Run tests
-npm test
-
-# Run tests in watch mode
-npm run test:watch
-
-# Run E2E tests
-npm run test:e2e
-
-# Generate coverage report
-npm run test:coverage
-```
-
-## 📊 Project Structure
-
-```
-kisan-saathi-frontend/
-├── app/                    # Next.js app directory
-│   ├── api/               # API routes
-│   ├── dashboard/         # Dashboard pages
-│   ├── signin/           # Authentication pages
-│   └── globals.css       # Global styles
-├── components/            # React components
+src/
+├── app/                    # Next.js App Router pages
+│   ├── api/               # API endpoints
+│   ├── dashboard/         # Main application dashboard
+│   ├── auth/              # Authentication pages
+│   └── globals.css        # Global styles
+├── components/            # Reusable React components
 │   ├── ui/               # Base UI components
 │   ├── layout/           # Layout components
-│   └── features/         # Feature components
-├── lib/                  # Utilities and configurations
-│   ├── api.ts           # API client
-│   ├── auth.ts          # Authentication config
-│   ├── prisma.ts        # Database client
-│   └── utils.ts         # Helper functions
+│   └── features/         # Feature-specific components
+├── lib/                  # Utility functions and configurations
 ├── prisma/               # Database schema and migrations
 ├── public/               # Static assets
 ├── types/                # TypeScript type definitions
-├── hooks/                # Custom React hooks
-├── styles/               # Additional stylesheets
-└── docs/                 # Documentation
+└── docs/                 # Project documentation
 ```
 
-## 🌐 Supported Languages
+## 🖥️ User Interface
 
-- **English** (en)
-- **Hindi** (hi)
-- **Bengali** (bn)
-- **Telugu** (te)
-- **Tamil** (ta)
-- **Gujarati** (gu)
-- **Kannada** (kn)
-- **Malayalam** (ml)
-- **Marathi** (mr)
-- **Punjabi** (pa)
-- **Odia** (or)
-- **Assamese** (as)
+### Authentication System
+- User registration with form validation
+- Secure login functionality
+- Session management
+- Profile management interface
+
+### Dashboard Features
+- **Main Dashboard**: Overview of all agricultural tools and recent activity
+- **Navigation Sidebar**: Easy access to different modules
+- **Chat Interface**: Interactive messaging system for agricultural queries
+- **Form-based Tools**: Input forms for crop analysis, soil testing, etc.
+- **Data Visualization**: Charts and displays for weather, prices, and recommendations
+
+### Responsive Design
+- Mobile-optimized interface
+- Tablet and desktop layouts
+- Touch-friendly controls
+- Accessibility features
+
+## 🔧 Available Scripts
+
+```bash
+npm run dev          # Start development server
+npm run build        # Build for production
+npm run start        # Start production server
+npm run lint         # Run ESLint
+npm run type-check   # TypeScript validation
+```
+
+## 📊 Database Schema
+
+The application uses Prisma ORM with the following main entities:
+- **Users**: User accounts and profiles
+- **Chat Sessions**: Conversation history
+- **Messages**: Individual chat messages
+- **Queries**: Agricultural queries and responses
+- **Agent Configurations**: System configuration
+
+## 🌐 Backend Integration
+
+The frontend is designed to integrate with a backend API that provides:
+- Agricultural data processing
+- Weather information APIs
+- Market price feeds
+- Government scheme databases
+- User authentication services
+
+## 🔒 Security Features
+
+- **Password Encryption**: bcrypt hashing for user passwords
+- **Session Management**: Secure JWT-based authentication
+- **Input Validation**: Form validation and sanitization
+- **CSRF Protection**: Built-in Next.js security features
+
+## 📱 Mobile Support
+
+- Progressive Web App (PWA) capabilities
+- Mobile-responsive design
+- Touch gestures support
+- Offline functionality framework
+
+## 🧪 Testing
+
+The project includes setup for:
+- Unit testing with Jest
+- Component testing with React Testing Library
+- End-to-end testing framework
+- Type checking with TypeScript
+
+## 📈 Performance Optimizations
+
+- **Code Splitting**: Automatic route-based splitting
+- **Image Optimization**: Next.js built-in optimization
+- **Caching**: React Query for server state caching
+- **Bundle Analysis**: Webpack bundle optimization
 
 ## 🤝 Contributing
 
-We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
-
-### Development Workflow
+This project was developed as an academic exercise. For contribution guidelines:
 
 1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/amazing-feature`
+2. Create a feature branch
 3. Make your changes
-4. Add tests for new functionality
-5. Ensure all tests pass: `npm test`
-6. Commit your changes: `git commit -m 'Add amazing feature'`
-7. Push to your branch: `git push origin feature/amazing-feature`
-8. Open a Pull Request
-
-### Code Style
-
-- Use TypeScript for all new code
-- Follow ESLint and Prettier configurations
-- Write comprehensive tests for new features
-- Use semantic commit messages
-- Update documentation for API changes
-
-## 📝 Scripts
-
-```bash
-# Development
-npm run dev              # Start development server
-npm run build           # Build for production
-npm run start           # Start production server
-npm run lint            # Run ESLint
-npm run type-check      # Run TypeScript check
-
-# Database
-npm run prisma:generate # Generate Prisma client
-npm run prisma:migrate  # Run database migrations
-npm run prisma:reset    # Reset database
-
-# Deployment
-npm run docker:build    # Build Docker image
-npm run docker:run      # Run Docker container
-```
-
-## 🐛 Troubleshooting
-
-### Common Issues
-
-1. **Database Connection Error**
-   - Ensure PostgreSQL is running
-   - Check DATABASE_URL in .env file
-   - Run `npx prisma db push` to sync schema
-
-2. **Authentication Issues**
-   - Verify NEXTAUTH_SECRET is set
-   - Check NEXTAUTH_URL matches your domain
-   - Clear browser cookies and try again
-
-3. **API Connection Failed**
-   - Confirm backend API is running
-   - Check NEXT_PUBLIC_API_URL environment variable
-   - Verify CORS settings on backend
-
-4. **Build Errors**
-   - Delete `.next` folder and rebuild
-   - Check for TypeScript errors: `npm run type-check`
-   - Ensure all dependencies are installed
-
-## 📞 Support
-
-- **Documentation**: [docs/](docs/)
-- **Issues**: [GitHub Issues](https://github.com/yourusername/kisan-saathi-frontend/issues)
-- **Email**: support@kisansaathi.com
-- **Community**: [Discord Server](https://discord.gg/kisansaathi)
+4. Submit a pull request
 
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## 👥 Team
 
-- **Backend Team**: [Farmer Query Support System](https://github.com/shubham21-ai/Farmer-Query-Support-and-Advisory-System)
-- **PRAGATI Project**: Inspiration for agricultural AI solutions
-- **shadcn/ui**: Beautiful UI components
-- **Vercel**: Hosting and deployment platform
-- **Open Source Community**: For amazing tools and libraries
+Developed as part of our academic project to create a comprehensive agricultural advisory platform for Indian farmers.
+
+## 📞 Contact
+
+For questions about this project:
+- Create an issue in the GitHub repository
+- Contact through the repository discussion section
 
 ---
 
 <div align="center">
 
-**Built with ❤️ for farmers across India**
+**Built for farmers across India** 🇮🇳
 
-[Website](https://kisansaathi.com) • [Documentation](docs/) • [API](https://api.kisansaathi.com) • [Support](mailto:support@kisansaathi.com)
+[GitHub Repository](https://github.com/Mauryavardhan/KisanSaathi) • [Documentation](docs/) • [Issues](https://github.com/Mauryavardhan/KisanSaathi/issues)
 
 </div>

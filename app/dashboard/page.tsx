@@ -23,7 +23,7 @@ import {
 
 const quickActions = [
   {
-    title: "Ask AI Assistant",
+    title: "Ask Assistant",
     description: "Get instant farming advice",
     icon: MessageSquare,
     href: "/dashboard/chat",
@@ -177,7 +177,7 @@ export default function DashboardPage() {
         {/* AI Features */}
         <div className="lg:col-span-2">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-xl font-semibold">AI-Powered Features</h2>
+            <h2 className="text-xl font-semibold">Agricultural Tools</h2>
             <Link href="/dashboard/agents">
               <Button variant="ghost" size="sm">
                 View all <ArrowRight className="ml-1 h-4 w-4" />

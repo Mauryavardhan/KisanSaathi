@@ -18,8 +18,8 @@ import {
 const features = [
   {
     icon: <MessageCircle className="h-8 w-8" />,
-    title: "AI Chat Assistant",
-    description: "Get instant answers to your farming questions in your preferred language with our advanced AI."
+    title: "Chat Assistant",
+    description: "Get instant answers to your farming questions in your preferred language through our platform."
   },
   {
     icon: <Sprout className="h-8 w-8" />,
@@ -85,12 +85,12 @@ export default function HomePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-4xl">
             <h1 className="heading-xl text-agricultural-900 mb-6">
-              Empowering Farmers with{" "}
-              <span className="text-agricultural-600">AI Technology</span>
+            Empowering Farmers with{" "}
+            <span className="text-agricultural-600">Modern Technology</span>
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Kisan Saathi is your intelligent farming companion, providing personalized advice, 
-              crop recommendations, and real-time agricultural insights to boost your productivity.
+            Kisan Saathi is your digital farming companion, providing personalized advice, 
+            crop recommendations, and agricultural insights to help boost your productivity.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/signup">
@@ -131,7 +131,7 @@ export default function HomePage() {
               Comprehensive Agricultural Solutions
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Our AI-powered platform offers everything you need to make informed farming decisions
+              Our comprehensive platform offers everything you need to make informed farming decisions
             </p>
           </div>
           
@@ -183,9 +183,9 @@ export default function HomePage() {
               <div className="mx-auto w-16 h-16 bg-agricultural-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4">
                 2
               </div>
-              <h3 className="text-xl font-semibold mb-2">AI Analysis</h3>
+              <h3 className="text-xl font-semibold mb-2">Data Analysis</h3>
               <p className="text-muted-foreground">
-                Our AI processes your query using advanced agricultural knowledge
+                Our system processes your query using comprehensive agricultural knowledge
               </p>
             </div>
             <div className="text-center">

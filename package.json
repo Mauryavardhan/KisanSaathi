@@ -1,7 +1,7 @@
 {
   "name": "kisan-saathi-frontend",
   "version": "1.0.0",
-  "description": "AI-powered farmer advisory system frontend - Kisan Saathi",
+  "description": "Farmer advisory system frontend - Kisan Saathi",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -14,8 +14,6 @@
     "prisma:migrate": "prisma migrate dev",
     "prisma:reset": "prisma migrate reset --force",
     "prisma:seed": "tsx prisma/seed.ts",
-    "docker:build": "docker build -t kisan-saathi-frontend .",
-    "docker:run": "docker run -p 3000:3000 --env-file .env kisan-saathi-frontend",
     "postinstall": "prisma generate"
   },
   "dependencies": {
