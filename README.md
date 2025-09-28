@@ -1,231 +1,379 @@
-# 🌾 Kisan Saathi - Farmer Advisory System
+# 🌾 Kisan Saathi - Complete Agricultural Advisory System
 
 <div align="center">
 
-**Smart India Hackathon 2025 - Agricultural Advisory Platform**
+**Smart India Hackathon 2025 - Full-Stack Agricultural Platform**
 
 ![Smart India Hackathon 2025](https://img.shields.io/badge/Smart_India_Hackathon-2025-FF6B35?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDJMMTUuMDkgOC4yNkwyMiA5TDE3IDEzLjc0TDE4IDIxTDEyIDE4TDYgMjFMNyAxMy43NEwyIDlMOC45MSA4LjI2TDEyIDJaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K)
 
 [![Next.js](https://img.shields.io/badge/Next.js-15.0.3-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.6.3-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
-[![Prisma](https://img.shields.io/badge/Prisma-5.22.0-2D3748?style=for-the-badge&logo=prisma)](https://www.prisma.io/)
-[![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-3.4.14-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
+[![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=for-the-badge&logo=python)](https://python.org/)
+[![Machine Learning](https://img.shields.io/badge/ML-Scikit--Learn-orange?style=for-the-badge&logo=scikit-learn)](https://scikit-learn.org/)
+[![LangChain](https://img.shields.io/badge/LangChain-Framework-blue?style=for-the-badge)](https://langchain.com/)
 
 </div>
 
-## 📋 Project Description
+## 📋 Project Overview
 
-Kisan Saathi is a comprehensive web-based agricultural advisory platform developed for **Smart India Hackathon 2025**. This frontend application provides farmers across India with access to agricultural guidance, crop recommendations, disease identification tools, weather information, and market insights through an intuitive web interface.
+**Kisan Saathi** is a comprehensive full-stack agricultural advisory platform developed for **Smart India Hackathon 2025**. This project combines a modern React-based frontend with an advanced AI-powered backend system to provide Indian farmers with intelligent agricultural guidance, crop recommendations, disease diagnosis, and market insights.
 
-This project addresses the critical need for accessible agricultural information in rural India, leveraging modern web technologies to bridge the gap between farmers and agricultural expertise. Built with React, Next.js, and TypeScript, it demonstrates our team's capability to create scalable solutions for real-world agricultural challenges.
-
-## 🎯 Problem Statement (SIH 2025)
+### 🎯 Problem Statement (SIH 2025)
 
 **Challenge**: Many farmers in India lack easy access to timely, accurate agricultural information, leading to suboptimal farming decisions, crop losses, and reduced productivity.
 
-**Our Solution**: A comprehensive web-based platform that provides:
-- Instant access to agricultural guidance
-- Crop recommendation systems based on local conditions
-- Disease identification and treatment advice
-- Weather-based farming advisories
-- Market price information for better selling decisions
-- Government scheme awareness and access
+**Our Solution**: A comprehensive full-stack platform featuring:
+- **Modern Web Frontend**: Intuitive user interface for farmers
+- **AI-Powered Backend**: Intelligent agents for agricultural decision support
+- **Multi-Language Support**: Native language support for Indian farmers
+- **Real-time Data Integration**: Weather, market prices, and government schemes
+- **Mobile-First Design**: Optimized for rural connectivity and mobile devices
 
 **Impact**: Empowering farmers with technology-driven solutions to increase crop yields, reduce losses, and improve overall agricultural productivity across India.
 
+## 🏗️ System Architecture
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    KISAN SAATHI ARCHITECTURE                    │
+├─────────────────────────────────────────────────────────────────┤
+│  FRONTEND (Next.js 15 + TypeScript + TailwindCSS)              │
+│  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐  │
+│  │   Landing Page  │  │   Dashboard     │  │   Chat Interface│  │
+│  │   Authentication│  │   User Profile  │  │   Agent Results │  │
+│  └─────────────────┘  └─────────────────┘  └─────────────────┘  │
+│                              │                                   │
+│                              ▼                                   │
+│  ┌─────────────────────────────────────────────────────────────┐  │
+│  │                API Gateway (Axios)                          │  │
+│  └─────────────────────────────────────────────────────────────┘  │
+│                              │                                   │
+├─────────────────────────────────────────────────────────────────┤
+│  BACKEND (Python + AI Agents + ML Models)                      │
+│                              │                                   │
+│  ┌─────────────────────────────────────────────────────────────┐  │
+│  │                Router Agent (LangChain)                     │  │
+│  └─────────────────────────────────────────────────────────────┘  │
+│                              │                                   │
+│  ┌─────────────┐ ┌─────────────┐ ┌─────────────┐ ┌─────────────┐  │
+│  │    Crop     │ │   Disease   │ │ Government  │ │   Market    │  │
+│  │Recommendation│ │  Diagnosis  │ │   Schemes   │ │   Prices    │  │
+│  │   Agent     │ │    Agent    │ │    Agent    │ │    Agent    │  │
+│  └─────────────┘ └─────────────┘ └─────────────┘ └─────────────┘  │
+│                              │                                   │
+│  ┌─────────────────────────────────────────────────────────────┐  │
+│  │            Synthesizer Agent (Response Fusion)              │  │
+│  └─────────────────────────────────────────────────────────────┘  │
+│                              │                                   │
+│  ┌─────────────────────────────────────────────────────────────┐  │
+│  │         Google APIs (Speech, Translation, TTS)              │  │
+│  └─────────────────────────────────────────────────────────────┘  │
+└─────────────────────────────────────────────────────────────────┘
+```
+
 ## 🎯 Features Implemented
 
-### Core Functionality
-- **💬 Interactive Chat Interface**: Conversational platform for agricultural queries
-- **🌱 Crop Recommendation System**: Input-based crop suggestions for different soil types
-- **🛡️ Disease Detection Interface**: Image upload functionality for crop health analysis  
-- **☁️ Weather Information Display**: Weather data integration for agricultural planning
-- **📈 Market Price Tracking**: Interface for displaying commodity prices and trends
-- **💧 Irrigation Planning Tools**: Water management guidance system
-- **🐛 Pest Management Interface**: Pest control information and strategies
-- **🧪 Fertilizer Calculator**: Nutrition recommendations based on soil data
-- **🏛️ Government Schemes**: Information portal for agricultural policies
+### Frontend Features (Next.js + TypeScript)
+- **🎨 Modern UI/UX**: Clean, responsive design with TailwindCSS
+- **🔐 Authentication System**: Secure user registration and login
+- **💬 Interactive Chat**: Real-time chat interface with AI agents
+- **📱 Mobile-First**: Optimized for mobile devices and rural connectivity
+- **🌙 Theme Support**: Light/dark mode with user preferences
+- **📊 Dashboard**: Comprehensive overview of farming tools and insights
+- **🔍 Agent Integration**: Direct access to specialized agricultural agents
+- **📈 Real-time Updates**: Live data integration with backend services
 
-### Technical Features
-- **🔐 User Authentication**: Secure login and registration system
-- **📱 Responsive Design**: Mobile-first approach for accessibility
-- **🌐 Multi-language Support**: Framework for regional language integration
-- **💾 Data Management**: Local database with user preferences and chat history
-- **🎨 Modern UI/UX**: Clean, agricultural-themed interface design
+### Backend Features (Python + AI)
+- **🤖 Intelligent Routing**: Smart query routing to appropriate agents
+- **🌱 ML-Based Crop Recommendations**: Random Forest model for crop suggestions
+- **🔍 Computer Vision Disease Detection**: Vision Transformer for plant disease identification
+- **📋 Government Scheme Integration**: Real-time access to agricultural schemes
+- **💰 Market Price Analysis**: Live market data and price comparisons
+- **🎤 Multi-Language Support**: Speech-to-text and text-to-speech in 10+ Indian languages
+- **🔄 Response Synthesis**: Intelligent combination of multiple agent outputs
+- **📊 Data Analytics**: Comprehensive agricultural data processing
+
+### Core Agents
+1. **Router Agent**: Intelligently routes farmer queries to specialized agents
+2. **Crop Recommendation Agent**: ML-based crop suggestions using soil and weather data
+3. **Disease Diagnosis Agent**: Image-based plant disease identification and treatment
+4. **Government Schemes Agent**: Information about agricultural subsidies and programs
+5. **Price Detection Agent**: Real-time market price analysis and comparison
+6. **Synthesizer Agent**: Combines results from multiple agents into coherent responses
 
 ## 🛠️ Technology Stack
 
-**Frontend Framework:**
-- **Next.js 15** - React framework with App Router
-- **TypeScript** - Type-safe development
-- **TailwindCSS** - Utility-first CSS framework
-- **shadcn/ui** - Modern UI component library
+### Frontend Technologies
+- **Framework**: Next.js 15 with App Router
+- **Language**: TypeScript for type safety
+- **Styling**: TailwindCSS with custom agricultural theme
+- **State Management**: React Query for server state
+- **Authentication**: NextAuth.js with multiple providers
+- **Database**: Prisma ORM with SQLite
+- **UI Components**: Radix UI with custom components
+- **Icons**: Lucide React icon library
 
-**Database & Authentication:**
-- **Prisma ORM** - Database management
-- **SQLite/PostgreSQL** - Data storage options
-- **NextAuth.js** - Authentication system
-- **bcryptjs** - Password encryption
+### Backend Technologies
+- **Core Framework**: Python 3.8+ with LangChain
+- **AI/ML Framework**: LangChain with Google Gemini integration
+- **Machine Learning**: Scikit-learn, PyTorch, Transformers
+- **Computer Vision**: Vision Transformer (ViT) for disease detection
+- **Language Processing**: Google Cloud Speech-to-Text, Translation, Text-to-Speech
+- **Data Processing**: Pandas, NumPy for agricultural data analysis
+- **Web Framework**: Streamlit for rapid prototyping and API endpoints
+- **External APIs**: Tavily for web search, Government APIs for market data
 
-**Development Tools:**
-- **ESLint & Prettier** - Code quality and formatting
-- **React Query** - Server state management
-- **Framer Motion** - Animation library
-- **React Hook Form** - Form handling
-
-## 🚀 Getting Started
-
-### Prerequisites
-- Node.js 18.0.0 or higher
-- npm, yarn, or pnpm package manager
-
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/Mauryavardhan/KisanSaathi.git
-   cd KisanSaathi
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Set up environment variables**
-   ```bash
-   cp .env.example .env
-   ```
-   
-   Configure your `.env` file:
-   ```env
-   DATABASE_URL="file:./dev.db"
-   NEXTAUTH_SECRET="your-secret-key-here"
-   NEXTAUTH_URL="http://localhost:3000"
-   NEXT_PUBLIC_API_URL="http://localhost:8000"
-   ```
-
-4. **Initialize the database**
-   ```bash
-   npx prisma migrate dev --name init
-   npx prisma db seed
-   ```
-
-5. **Start the development server**
-   ```bash
-   npm run dev
-   ```
-
-6. **Open your browser**
-   
-   Navigate to [http://localhost:3000](http://localhost:3000) to view the application.
+### ML Models & Data
+- **Crop Recommendation**: Random Forest model trained on agricultural datasets
+- **Disease Detection**: Vision Transformer model for plant disease classification
+- **Training Data**: 1000+ crop samples, 500+ disease images
+- **Market Data**: Real-time integration with Indian government market APIs
+- **Weather Data**: Integration with meteorological services
 
 ## 📁 Project Structure
 
 ```
-src/
-├── app/                    # Next.js App Router pages
-│   ├── api/               # API endpoints
-│   ├── dashboard/         # Main application dashboard
-│   ├── auth/              # Authentication pages
-│   └── globals.css        # Global styles
-├── components/            # Reusable React components
-│   ├── ui/               # Base UI components
-│   ├── layout/           # Layout components
-│   └── features/         # Feature-specific components
-├── lib/                  # Utility functions and configurations
-├── prisma/               # Database schema and migrations
-├── public/               # Static assets
-├── types/                # TypeScript type definitions
-└── docs/                 # Project documentation
+KisanSaathi/
+├── frontend/                    # Next.js Frontend Application
+│   ├── app/                     # App Router pages
+│   │   ├── dashboard/           # Dashboard pages
+│   │   ├── signin/              # Authentication pages
+│   │   └── api/                 # API routes
+│   ├── components/              # React components
+│   │   ├── ui/                  # Reusable UI components
+│   │   └── layout/              # Layout components
+│   ├── lib/                     # Utility functions
+│   ├── prisma/                  # Database schema and migrations
+│   ├── public/                  # Static assets
+│   └── types/                   # TypeScript type definitions
+├── backend/                     # Python Backend & ML System
+│   ├── agents/                  # AI Agent implementations
+│   │   ├── router_agent.py      # Query routing logic
+│   │   ├── crop_recommendation_agent.py
+│   │   ├── disease_diagnosis.py
+│   │   ├── schemes.py
+│   │   ├── price_detection_agent.py
+│   │   ├── synthesizer_agent.py
+│   │   └── google_apis.py
+│   ├── models/                  # ML Models and training
+│   │   ├── crop_recommendation_model.pkl
+│   │   └── crop-recommendation-rf/
+│   ├── data/                    # Datasets and market data
+│   │   ├── crop_recommendation.csv
+│   │   └── market_prices.json
+│   ├── api/                     # API endpoints
+│   │   ├── main.py              # Main Streamlit application
+│   │   └── streamlit_app.py     # Alternative Streamlit app
+│   └── utils/                   # Utility functions
+├── docs/                        # Documentation
+├── scripts/                     # Setup and utility scripts
+└── README.md                    # This file
 ```
 
-## 🖥️ User Interface
+## 🚀 Quick Start Guide
 
-### Authentication System
-- User registration with form validation
-- Secure login functionality
-- Session management
-- Profile management interface
+### Prerequisites
+- **Node.js** 18+ and npm
+- **Python** 3.8 or higher
+- **Git** for version control
 
-### Dashboard Features
-- **Main Dashboard**: Overview of all agricultural tools and recent activity
-- **Navigation Sidebar**: Easy access to different modules
-- **Chat Interface**: Interactive messaging system for agricultural queries
-- **Form-based Tools**: Input forms for crop analysis, soil testing, etc.
-- **Data Visualization**: Charts and displays for weather, prices, and recommendations
-
-### Responsive Design
-- Mobile-optimized interface
-- Tablet and desktop layouts
-- Touch-friendly controls
-- Accessibility features
-
-## 🔧 Available Scripts
-
+### 1. Clone the Repository
 ```bash
-npm run dev          # Start development server
-npm run build        # Build for production
-npm run start        # Start production server
-npm run lint         # Run ESLint
-npm run type-check   # TypeScript validation
+git clone https://github.com/Mauryavardhan/KisanSaathi.git
+cd KisanSaathi
 ```
 
-## 📊 Database Schema
+### 2. Frontend Setup
+```bash
+cd frontend
+npm install
+npm run prisma:generate
+npm run prisma:migrate
+npm run dev
+```
+The frontend will be available at `http://localhost:3000`
 
-The application uses Prisma ORM with the following main entities:
-- **Users**: User accounts and profiles
-- **Chat Sessions**: Conversation history
-- **Messages**: Individual chat messages
-- **Queries**: Agricultural queries and responses
-- **Agent Configurations**: System configuration
+### 3. Backend Setup
+```bash
+cd ../backend
+pip install -r requirements.txt
+```
 
-## 🌐 Backend Integration
+#### Environment Configuration
+Create a `.env` file in the backend directory:
+```env
+# Required
+GOOGLE_API_KEY=your_gemini_api_key_here
 
-The frontend is designed to integrate with a backend API that provides:
-- Agricultural data processing
-- Weather information APIs
-- Market price feeds
-- Government scheme databases
-- User authentication services
+# Optional (for enhanced functionality)
+TAVILY_API_KEY=your_tavily_api_key_here
+GOOGLE_APPLICATION_CREDENTIALS=path_to_google_cloud_credentials.json
+```
 
-## 🔒 Security Features
+### 4. Run the Backend
+```bash
+# Option 1: Main Streamlit Application
+streamlit run api/main.py
 
-- **Password Encryption**: bcrypt hashing for user passwords
-- **Session Management**: Secure JWT-based authentication
-- **Input Validation**: Form validation and sanitization
-- **CSRF Protection**: Built-in Next.js security features
+# Option 2: Alternative Streamlit Application
+streamlit run api/streamlit_app.py
 
-## 📱 Mobile Support
+# Option 3: Integration Testing
+python test_integration.py
+```
 
-- Progressive Web App (PWA) capabilities
-- Mobile-responsive design
-- Touch gestures support
-- Offline functionality framework
+## 🧪 Testing & Validation
 
-## 🧪 Testing
+### Frontend Testing
+```bash
+cd frontend
+npm run lint          # Code quality checks
+npm run type-check    # TypeScript validation
+npm run build         # Production build test
+```
 
-The project includes setup for:
-- Unit testing with Jest
-- Component testing with React Testing Library
-- End-to-end testing framework
-- Type checking with TypeScript
+### Backend Testing
+```bash
+cd backend
+python test_integration.py  # Comprehensive integration tests
+```
 
-## 📈 Performance Optimizations
+### Integration Testing
+The system includes comprehensive integration tests that verify:
+- ✅ All agent modules import correctly
+- ✅ Router agent functionality
+- ✅ Google APIs integration
+- ✅ Specialized agents (crop, disease, schemes, prices)
+- ✅ Synthesizer agent
+- ✅ Complete pipeline integration
 
-- **Code Splitting**: Automatic route-based splitting
-- **Image Optimization**: Next.js built-in optimization
-- **Caching**: React Query for server state caching
-- **Bundle Analysis**: Webpack bundle optimization
+## 🌐 API Integration
+
+### Frontend-Backend Communication
+The frontend communicates with the backend through:
+- **Axios HTTP Client**: Configured for API calls
+- **Authentication Headers**: Secure token-based communication
+- **Real-time Updates**: WebSocket support for live data
+- **Error Handling**: Comprehensive error management
+
+### Backend API Endpoints
+- `/api/chat` - Main chat interface with AI agents
+- `/api/crop-recommendation` - Crop recommendation service
+- `/api/disease-diagnosis` - Disease identification service
+- `/api/government-schemes` - Government scheme information
+- `/api/market-prices` - Market price data service
+
+## 🎨 User Interface Features
+
+### Dashboard Components
+- **Quick Actions**: Fast access to common farming tools
+- **Agent Cards**: Visual representation of available AI agents
+- **Real-time Data**: Live weather, market prices, and scheme updates
+- **User Profile**: Personalized settings and preferences
+- **Chat History**: Previous conversations and recommendations
+
+### Chat Interface
+- **Multi-modal Input**: Text, voice, and image support
+- **Agent Responses**: Structured output from specialized agents
+- **Language Support**: 10+ Indian languages
+- **File Upload**: Image upload for disease diagnosis
+- **Response Formatting**: Clean, readable agricultural advice
+
+## 🔧 Configuration & Customization
+
+### Frontend Configuration
+- **Theme Customization**: Agricultural color palette in `tailwind.config.ts`
+- **Database Schema**: Prisma schema in `prisma/schema.prisma`
+- **API Configuration**: Backend URL configuration in `lib/api.ts`
+- **Authentication**: NextAuth configuration in `app/api/auth/`
+
+### Backend Configuration
+- **Model Parameters**: ML model configuration in agent files
+- **API Keys**: Environment variable configuration
+- **Language Support**: Language code configuration
+- **Agent Routing**: Router agent configuration for query classification
+
+## 📊 Performance & Scalability
+
+### Frontend Optimizations
+- **Next.js 15**: Latest performance optimizations
+- **Image Optimization**: Next.js Image component for efficient loading
+- **Code Splitting**: Automatic code splitting for faster loading
+- **Caching**: React Query for intelligent data caching
+- **Bundle Optimization**: Tree shaking and dead code elimination
+
+### Backend Optimizations
+- **Model Caching**: Pre-loaded ML models for faster inference
+- **API Rate Limiting**: Efficient API usage and cost management
+- **Response Caching**: Intelligent caching of agent responses
+- **Async Processing**: Non-blocking agent execution
+- **Resource Management**: Efficient memory and CPU usage
+
+## 🌍 Language Support
+
+### Supported Languages
+- **Hindi** (हिंदी) - Primary Indian language
+- **English** - International communication
+- **Bengali** (বাংলা) - Eastern India
+- **Tamil** (தமிழ்) - Southern India
+- **Telugu** (తెలుగు) - Andhra Pradesh & Telangana
+- **Marathi** (मराठी) - Maharashtra
+- **Gujarati** (ગુજરાતી) - Gujarat
+- **Kannada** (ಕನ್ನಡ) - Karnataka
+- **Malayalam** (മലയാളം) - Kerala
+- **Punjabi** (ਪੰਜਾਬੀ) - Punjab
+
+### Language Features
+- **Speech Recognition**: Native language voice input
+- **Text Translation**: Automatic query translation
+- **Voice Output**: Text-to-speech in local languages
+- **Cultural Context**: Region-specific agricultural advice
+
+## 🔐 Security & Privacy
+
+### Data Protection
+- **User Authentication**: Secure login and session management
+- **Data Encryption**: Encrypted data transmission and storage
+- **Privacy Controls**: User data privacy and consent management
+- **API Security**: Secure API endpoints with authentication
+
+### Agricultural Data Security
+- **Farm Data Protection**: Secure handling of sensitive farm information
+- **Model Security**: Protected ML model access
+- **API Rate Limiting**: Protection against abuse
+- **Input Validation**: Secure input processing and validation
+
+## 📈 Future Enhancements
+
+### Planned Features
+- **IoT Integration**: Sensor data integration for precision farming
+- **Satellite Imagery**: Remote sensing for crop monitoring
+- **Blockchain**: Transparent supply chain tracking
+- **Mobile App**: Native mobile applications
+- **Offline Support**: Offline functionality for rural areas
+
+### Scalability Roadmap
+- **Microservices**: Service-oriented architecture
+- **Cloud Deployment**: Scalable cloud infrastructure
+- **Real-time Analytics**: Advanced data analytics and insights
+- **Integration APIs**: Third-party service integration
+- **Multi-tenant Support**: Support for multiple organizations
 
 ## 🤝 Contributing
 
-This project was developed as an academic exercise. For contribution guidelines:
+We welcome contributions to improve Kisan Saathi for Indian farmers!
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
+### Development Guidelines
+1. **Fork the repository**
+2. **Create a feature branch** (`git checkout -b feature/amazing-feature`)
+3. **Commit your changes** (`git commit -m 'Add amazing feature'`)
+4. **Push to the branch** (`git push origin feature/amazing-feature`)
+5. **Open a Pull Request**
+
+### Code Standards
+- **Frontend**: TypeScript, ESLint, Prettier
+- **Backend**: Python PEP 8, type hints
+- **Documentation**: Clear comments and README updates
+- **Testing**: Comprehensive test coverage
 
 ## 📄 License
 
@@ -241,21 +389,31 @@ Developed for **Smart India Hackathon 2025** to address agricultural challenges 
 - **Focus Area**: Agriculture & FarmTech Solutions
 - **Target Users**: Farmers across India, especially in rural and remote areas
 - **Impact Goal**: Bridge the agricultural knowledge gap through accessible technology
-- **Solution Approach**: User-friendly web platform with comprehensive farming tools
+- **Solution Approach**: Full-stack web platform with comprehensive farming tools
 
-## 📞 Contact
+### Technical Achievements
+- **Full-Stack Development**: Modern React frontend with Python AI backend
+- **Machine Learning**: Custom ML models for crop recommendation and disease detection
+- **Multi-Language Support**: 10+ Indian languages with speech processing
+- **Real-time Integration**: Live data from government APIs and market sources
+- **Mobile-First Design**: Optimized for rural connectivity and mobile usage
+
+## 📞 Contact & Support
 
 For questions about this project:
-- Create an issue in the GitHub repository
-- Contact through the repository discussion section
+- **GitHub Issues**: [Create an issue](https://github.com/Mauryavardhan/KisanSaathi/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/Mauryavardhan/KisanSaathi/discussions)
+- **Email**: Contact through repository information
 
 ---
 
 <div align="center">
 
 **Smart India Hackathon 2025** 🏆  
-**Built for farmers across India** 🇮🇳
+**Empowering Indian Farmers with Technology** 🇮🇳
 
 [GitHub Repository](https://github.com/Mauryavardhan/KisanSaathi) • [Issues](https://github.com/Mauryavardhan/KisanSaathi/issues)
+
+**Built with ❤️ for Indian Agriculture**
 
 </div>
